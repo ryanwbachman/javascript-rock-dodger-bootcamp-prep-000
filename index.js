@@ -69,7 +69,10 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  document.querySelectorAll('.rock').remove();
+  ROCKS = document.querySelectorAll('.rock');
+  ROCKS.forEach(function(element,index){
+    element[index].remove();
+  })
   console.log("YOU LOSE!");
 }
 
