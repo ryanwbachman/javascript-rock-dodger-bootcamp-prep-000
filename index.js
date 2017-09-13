@@ -41,6 +41,7 @@ function createRock(x) {
 
   function moveRock() {
      if(checkCollision(rock)){
+       rock.remove();
        endGame();
      }
     /**
