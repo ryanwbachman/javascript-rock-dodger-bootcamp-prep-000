@@ -24,7 +24,7 @@ function checkCollision(rock) {
     const rockLeftEdge = positionToInteger(rock.style.left)
     const rockCenter = rockLeftEdge + 10;
 
-    if (Math.absolute(dodgerCenter-rockCenter)<30) {
+    if (Math.abs(dodgerCenter-rockCenter)<30) {
       return true
     }
   }
