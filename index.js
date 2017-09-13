@@ -68,9 +68,6 @@ function endGame() {
 }
 
 function moveDodger(e) {
-
-  var key = e.which;
-
   if(e.which === LEFT_ARROW){
     e.preventDefault;
     e.stopPropagation;
