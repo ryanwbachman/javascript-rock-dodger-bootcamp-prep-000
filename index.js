@@ -75,7 +75,7 @@ function createRock(x) {
      * the GAME, we want to move it again.
      */
      top = positionToInteger(rock.style.top);
-     rock.style.top = `${top += 2}px`;
+     rock.style.top = `${top + 2}px`;
      window.requestAnimationFrame(moveRock);
 
     /**
