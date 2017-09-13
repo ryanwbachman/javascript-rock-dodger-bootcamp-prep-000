@@ -43,7 +43,7 @@ function createRock(x) {
      if(checkCollision(rock)){
        endGame();
      }
-     
+
      top = positionToInteger(rock.style.top);
      rock.style.top = `${top + 2}px`;
      window.requestAnimationFrame(moveRock);
@@ -69,7 +69,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  $('.rock').remove();
+  document.querySelectorAll('.rock').remove();
   console.log("YOU LOSE!");
 }
 
