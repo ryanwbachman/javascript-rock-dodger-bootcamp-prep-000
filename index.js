@@ -74,7 +74,7 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-     top = postionToInteger(rock.style.top);
+     top = positionToInteger(rock.style.top);
      rock.style.top += `${top + 2}px`;
 
     /**
