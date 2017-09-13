@@ -41,7 +41,7 @@ function createRock(x) {
 
   function moveRock() {
      if(checkCollision(rock)){
-       endGame();
+       return endGame();
      }
 
      top = positionToInteger(rock.style.top);
