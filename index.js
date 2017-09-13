@@ -71,15 +71,14 @@ function moveDodger(e) {
 
   var key = e.which;
 
-  if(key === LEFT_ARROW || key === RIGHT_ARROW){
+  if(key === LEFT_ARROW){
     e.preventDefault;
     e.stopPropagation;
-  }
-
-  if(key === LEFT_ARROW){
     moveDodgerLeft();
   }
   if(key === RIGHT_ARROW){
+    e.preventDefault;
+    e.stopPropagation;
     moveDodgerRight();
   }
 }
