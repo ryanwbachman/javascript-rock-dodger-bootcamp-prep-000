@@ -73,7 +73,7 @@ function endGame() {
   ROCKS.forEach(function(element){
     element.remove()
   });
-  window.removeEventListener('keydown');
+  window.removeEventListener('keydown',moveDodger);
   alert("YOU LOSE!");
 }
 
