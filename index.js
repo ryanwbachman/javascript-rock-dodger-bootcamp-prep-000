@@ -69,8 +69,17 @@ function endGame() {
 
 function moveDodger(e) {
 
+
+  const code = e.which
+
+    if ([LEFT_ARROW, RIGHT_ARROW].indexOf(code) > -1) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    
   e.preventDefault;
   e.stopPropagation;
+
 
   if(e.which === LEFT_ARROW){
     moveDodgerLeft();
