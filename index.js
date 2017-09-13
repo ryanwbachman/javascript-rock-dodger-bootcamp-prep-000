@@ -12,14 +12,7 @@ const START = document.getElementById('start')
 
 var gameInterval = null
 
-/**
- * Be aware of what's above this line,
- * but all of your work should happen below.
- */
-
 function checkCollision(rock) {
-  // implement me!
-  // use the comments below to guide you!
   const top = positionToInteger(rock.style.top)
 
   // rocks are 20px high
@@ -27,14 +20,11 @@ function checkCollision(rock) {
   // GAME_HEIGHT - 20 - 20 = 360px;
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-
-    // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
-    const dodgerRightEdge = 0;
-
+    const dodgerRightEdge = dodgerLeftEdge + 40;
+    const dodgerCenter = dodgerLeftEdge + 20;
     const rockLeftEdge = positionToInteger(rock.style.left)
-
-    // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-    const rockRightEdge = 0;
+    const rockRightEdge = rockLeftEdge + 20;
+    const rockCenter = rockLeftEdge + 10;
 
     if (false /**
                * Think about it -- what's happening here?
@@ -66,7 +56,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-
+   GAME.append(rock);
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -84,6 +74,8 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
+     top = postionToInteger(rock.style.top);
+     rock.style.top += `${top + 2}px`;
 
     /**
      * But if the rock *has* reached the bottom of the GAME,
@@ -91,8 +83,8 @@ function createRock(x) {
      */
   }
 
-  // We should kick of the animation of the rock around here
-
+  // We should kick off the animation of the rock around here
+  window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
@@ -111,14 +103,6 @@ function endGame() {
 }
 
 function moveDodger(e) {
-  // implement me!
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
    if(e.which == LEFT_ARROW){
      moveDodgerLeft();
    }
