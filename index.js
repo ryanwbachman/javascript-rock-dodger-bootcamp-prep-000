@@ -25,7 +25,7 @@ function checkCollision(rock) {
     const rockCenter = rockLeftEdge + 10;
 
     if (Math.abs(dodgerCenter-rockCenter)<30) {
-      return true
+      return true;
     }
   }
 }
@@ -52,22 +52,12 @@ function createRock(x) {
       rock.remove();
   }
 
-  // We should kick off the animation of the rock around here
   window.requestAnimationFrame(moveRock);
-  // Add the rock to ROCKS so that we can remove all rocks
-  // when there's a collision
   ROCKS.push(rock)
 
-  // Finally, return the rock element you've created
   return rock
 }
 
-/**
- * End the game by clearing `gameInterval`,
- * removing all ROCKS from the DOM,
- * and removing the `moveDodger` event listener.
- * Finally, alert "YOU LOSE!" to the player.
- */
 function endGame() {
   clearInterval(gameInterval);
   ROCKS.forEach(function(element){
@@ -75,7 +65,6 @@ function endGame() {
   });
   window.removeEventListener('keydown',moveDodger);
   alert("YOU LOSE!");
-  checkCollison = false;
 }
 
 function moveDodger(e) {
