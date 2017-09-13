@@ -70,14 +70,16 @@ function endGame() {
 function moveDodger(e) {
 
   var key = e.which;
-  
-  e.preventDefault;
-  e.stopPropagation;
-  
-  if(e.which === LEFT_ARROW){
+
+  if(key === LEFT_ARROW || key === RIGHT_ARROW){
+    e.preventDefault;
+    e.stopPropagation;
+  }
+
+  if(key === LEFT_ARROW){
     moveDodgerLeft();
   }
-  if(e.which === RIGHT_ARROW){
+  if(key === RIGHT_ARROW){
     moveDodgerRight();
   }
 }
