@@ -143,7 +143,7 @@ function moveDodgerRight() {
     var leftNumbers = dodger.style.left.replace('px','');
     var left = parseInt(leftNumbers, 10);
 
-    if(left<=GAME_WIDTH-40){
+    if(left<GAME_WIDTH-40){
       dodger.style.left = `${left + 4}px`;
     }
   });
