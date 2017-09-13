@@ -41,13 +41,9 @@ function createRock(x) {
 
   function moveRock() {
      if(checkCollision(rock)){
-       rock.remove();
        endGame();
      }
-    /**
-     * Otherwise, if the rock hasn't reached the bottom of
-     * the GAME, we want to move it again.
-     */
+     
      top = positionToInteger(rock.style.top);
      rock.style.top = `${top + 2}px`;
      window.requestAnimationFrame(moveRock);
@@ -73,7 +69,8 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  alert("YOU LOSE!");
+  $('.rock').remove();
+  console.log("YOU LOSE!");
 }
 
 function moveDodger(e) {
