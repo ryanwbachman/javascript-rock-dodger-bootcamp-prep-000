@@ -71,7 +71,7 @@ function moveDodger(e) {
   key = e.which;
   e.preventDefault;
   e.stopPropagation;
-  
+
   if(key == LEFT_ARROW){
     moveDodgerLeft();
   }
