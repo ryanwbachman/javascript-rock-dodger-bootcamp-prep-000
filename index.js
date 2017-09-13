@@ -143,7 +143,7 @@ function moveDodgerRight() {
     var leftNumbers = dodger.style.left.replace('px','');
     var left = parseInt(leftNumbers, 10);
 
-    if(left<=GAME_WIDTH-DODGER.width){
+    if(left<=GAME_WIDTH-40){
       dodger.style.left = `${left + 4}px`;
     }
   });
@@ -166,5 +166,4 @@ function start() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
   }, 1000)
 
-  console.log(dodger.style.width);
 }
