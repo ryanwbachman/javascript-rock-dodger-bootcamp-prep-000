@@ -75,6 +75,7 @@ function endGame() {
   });
   window.removeEventListener('keydown',moveDodger);
   alert("YOU LOSE!");
+  checkCollison = false;
 }
 
 function moveDodger(e) {
