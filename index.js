@@ -83,7 +83,7 @@ function createRock(x) {
      * we should remove the rock from the DOM
      */
      if(top>300)
-      GAME.remove(rock);
+      rock.remove();
   }
 
   // We should kick off the animation of the rock around here
